@@ -10,6 +10,7 @@
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-remark": "^1.7.39",
+    "material-ui": "^0.20.0",
     "react-helmet": "^5.2.0"
   },
   "keywords": [

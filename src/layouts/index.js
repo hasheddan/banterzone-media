@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import AppBar from 'material-ui/AppBar'
 
 import Header from '../components/Header'
 
@@ -13,7 +14,11 @@ const TemplateWrapper = ({ data, children }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header data={data} />
+    {/* <Header data={data} /> */}
+    {/* <AppBar
+    title={data.site.siteMetadata.title}
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
+  /> */}
     <div
       style={{
         margin: '0 auto',
