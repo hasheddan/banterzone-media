@@ -23,9 +23,12 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          The Banterzone
         </Link>
       </h1>
+      <Link to={`/about/`}>
+        About
+      </Link>
     </div>
   </div>
 )
