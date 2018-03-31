@@ -15,7 +15,7 @@ const Header = (props) => (
         padding: '1.45rem 1.0875rem',
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 style={{ margin: 0, display: 'inline' }}>
         <Link
           to="/"
           style={{
@@ -26,6 +26,17 @@ const Header = (props) => (
           {props.data.site.siteMetadata.title}
         </Link>
       </h1>
+      <h4 style={{ display: 'inline', float: 'right' }}>
+      <Link
+          to="/posts/"
+          style={{
+            color: 'white',
+            textDecoration: 'none',
+          }}
+        >
+          Posts
+        </Link>
+        </h4>
     </div>
   </div>
 )
