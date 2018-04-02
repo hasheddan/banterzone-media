@@ -24,8 +24,8 @@ const TemplateWrapper = ({ data, children }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Menu secondary>
-        <Menu.Item name='Home' active={true}/>
+    <Menu>
+      <Menu.Item header>The Banterzone</Menu.Item>
         <Menu.Item name='Podcasts'/>
         <Menu.Item name='Articles'/>
         <Menu.Menu position='right'>
