@@ -3,10 +3,15 @@ import Link from 'gatsby-link'
 
 const IndexPage = ({ data }) => (
   <div>
-    <h1>Hello Gatsby!</h1>
-    <p>What a world.</p>
-    <img src="https://images.unsplash.com/photo-1503124847436-adb728adca34?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fa16847fe876cd34ce60b002c0470e5c&auto=format&fit=crop&w=1350&q=80" alt="" />
   </div>
 )
 
 export default IndexPage
+
+const backStyle = {
+  // backgroundImage: `url("https://www.hdwallback.net/wp-content/uploads/2018/01/Desktop-background-of-coldwallpaperpicsphotosrainhd-pics.jpeg")`,
+  height: '100%',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}

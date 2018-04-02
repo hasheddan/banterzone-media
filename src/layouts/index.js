@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
-import FlatButton from 'material-ui/FlatButton'
-import Toolbar from 'material-ui/ToolBar'
 import Link, { navigateTo } from 'gatsby-link'
 import DropDownMenu from 'material-ui/DropDownMenu';
 import IconMenu from 'material-ui/IconMenu';
