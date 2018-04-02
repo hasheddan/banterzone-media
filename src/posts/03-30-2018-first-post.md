@@ -1,6 +1,7 @@
 ---
 title: "First Post"
 date: "2018-03-30"
+category: "NFL"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor imperdiet consequat. Proin id nunc volutpat, congue purus id, fringilla tellus. Suspendisse sagittis lacinia dui, eu tempus elit malesuada sit amet. Suspendisse pellentesque, turpis a rutrum sagittis, mauris dolor vulputate tortor, et suscipit est lectus at mauris. Praesent eu fermentum sem. Phasellus id nisi ut massa sodales suscipit. Pellentesque venenatis lacinia lectus non pharetra.
