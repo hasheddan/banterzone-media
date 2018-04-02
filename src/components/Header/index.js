@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import AppBar from 'material-ui/AppBar'
 
 const Header = (props) => (
   // <div
@@ -40,11 +39,8 @@ const Header = (props) => (
   //       </h1>
   //   </div>
   // </div>
-
-  <AppBar
-    title={props.data.site.siteMetadata.title}
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
-  />
+  <div>
+    </div>
 )
 
 export default Header
