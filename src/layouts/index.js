@@ -26,7 +26,7 @@ const TemplateWrapper = ({ data, children }) => (
     />
     <Menu>
       <Menu.Item header onClick={() => navigateTo('/')}>The Banterzone</Menu.Item>
-        <Menu.Item name='Podcasts'/>
+        <Menu.Item name='Podcasts' onClick={() => navigateTo('/podcasts/')}/>
         <Menu.Item name='Articles' onClick={() => navigateTo('/posts/')}/>
         <Menu.Menu position='right'>
           <Menu.Item>
