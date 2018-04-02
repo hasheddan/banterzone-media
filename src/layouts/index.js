@@ -25,14 +25,13 @@ const TemplateWrapper = ({ data, children }) => (
       ]}
     />
     <Menu>
-      <Menu.Item header>The Banterzone</Menu.Item>
+      <Menu.Item header onClick={() => navigateTo('/')}>The Banterzone</Menu.Item>
         <Menu.Item name='Podcasts'/>
-        <Menu.Item name='Articles'/>
+        <Menu.Item name='Articles' onClick={() => navigateTo('/posts/')}/>
         <Menu.Menu position='right'>
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
-          <Menu.Item name='logout'/>
         </Menu.Menu>
       </Menu>
     {/* <AppBar
@@ -60,7 +59,7 @@ const TemplateWrapper = ({ data, children }) => (
         margin: '0 auto',
         maxWidth: 960,
         padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 90,
+        paddingTop: 40,
       }}
     >
       {children()}
