@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from "gatsby-link";
+import Link from "gatsby-link"
+import { Label } from 'semantic-ui-react'
 
 const PostsPage = ({ data }) => (
     <div>
@@ -15,8 +16,10 @@ const PostsPage = ({ data }) => (
                     </Link>
                     {" "}
                     <span color="#BBB">— {node.frontmatter.date}</span>
+                    <Label as="a">{node.frontmatter.category}</Label>
                 </h3>
                 <p>{node.excerpt}</p>
+                <br/>
             </div>
         ))}
     </div>
@@ -34,6 +37,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            category
           }
           fields {
             slug

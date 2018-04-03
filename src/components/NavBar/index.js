@@ -42,18 +42,18 @@ export default class NavBar extends Component {
 
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
       const isMatch = result => re.test(result.title)
+      console.log(e);
+      // const filteredResults = _.reduce(source, (memo, data, name) => {
+      //   const results = _.filter(data.results, isMatch)
+      //   if (results.length) memo[name] = { name, results } // eslint-disable-line no-param-reassign
 
-      const filteredResults = _.reduce(source, (memo, data, name) => {
-        const results = _.filter(data.results, isMatch)
-        if (results.length) memo[name] = { name, results } // eslint-disable-line no-param-reassign
+      //   return memo
+      // }, {})
 
-        return memo
-      }, {})
-
-      this.setState({
-        isLoading: false,
-        results: filteredResults,
-      })
+      // this.setState({
+      //   isLoading: false,
+      //   results: filteredResults,
+      // })
     }, 300)
   }
 
@@ -87,3 +87,25 @@ export default class NavBar extends Component {
     )
   }
 }
+
+export const query = graphql`
+  query IndexQuery {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            category
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`;
