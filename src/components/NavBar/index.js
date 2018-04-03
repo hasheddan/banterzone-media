@@ -6,28 +6,30 @@ import { Input, Menu, Image, Search, Grid, Header } from 'semantic-ui-react'
 
 import BanterWeb from '../../images/BanterWeb.png'
 
-const getResults = () => _.times(5, () => ({
-  title: faker.company.companyName(),
-  description: faker.company.catchPhrase(),
-  image: faker.internet.avatar(),
-  price: faker.finance.amount(0, 100, 2, '$'),
-}))
+// const getResults = () => _.times(5, () => ({
+//   title: faker.company.companyName(),
+//   description: faker.company.catchPhrase(),
+//   image: faker.internet.avatar(),
+//   price: faker.finance.amount(0, 100, 2, '$'),
+// }))
 
-const source = _.range(0, 3).reduce((memo) => {
-  const name = faker.hacker.noun()
+// const source = _.range(0, 3).reduce((memo) => {
+//   const name = faker.hacker.noun()
 
-  memo[name] = { // eslint-disable-line no-param-reassign
-    name,
-    results: getResults(),
-  }
+//   memo[name] = { // eslint-disable-line no-param-reassign
+//     name,
+//     results: getResults(),
+//   }
 
-  return memo
-}, {})
+//   return memo
+// }, {})
 
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.data.allMarkdownRemark.edges);
+    this.state = {
+      posts: this.props.data.allMarkdownRemark.edges,
+    }
   }
 
   componentWillMount() {
@@ -46,14 +48,15 @@ export default class NavBar extends Component {
 
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
       const isMatch = result => re.test(result.title)
-      console.log(isMatch);
-      const filteredResults = _.reduce(source, (memo, data, name) => {
-        console.log(data);
-      //   const results = _.filter(data.results, isMatch)
+      console.log(this.state.posts)
+      // const filteredResults = _.reduce(this.posts, (memo, category, name, date) => {
+      //   const results = _.filter(this.posts, (o) => {
+      //     return (o.frontmatter.title, isMatch)
+      //   })
       //   if (results.length) memo[name] = { name, results } // eslint-disable-line no-param-reassign
 
       //   return memo
-      }, {})
+      // }, {})
 
       // this.setState({
       //   isLoading: false,
