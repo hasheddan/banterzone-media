@@ -1,21 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-// import AppBar from 'material-ui/AppBar'
 import Link, { navigateTo } from 'gatsby-link'
 import 'semantic-ui-css/semantic.min.css'
-import { Input, Menu } from 'semantic-ui-react'
-// import DropDownMenu from 'material-ui/DropDownMenu';
-// import IconMenu from 'material-ui/IconMenu';
-// import MenuItem from 'material-ui/MenuItem';
-// import IconButton from 'material-ui/IconButton';
-// import MenuIcon from 'material-ui/svg-icons/navigation/menu';
+import { Input, Menu, Image } from 'semantic-ui-react'
 
-import Header from '../components/Header'
+import BanterWeb from '../images/BanterWeb.png'
+
 
 const TemplateWrapper = ({ data, children }) => (
-  // <MuiThemeProvider>
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -25,7 +18,9 @@ const TemplateWrapper = ({ data, children }) => (
       ]}
     />
     <Menu>
-      <Menu.Item header onClick={() => navigateTo('/')}>The Banterzone</Menu.Item>
+      <Menu.Item header onClick={() => navigateTo('/')}>
+        <Image src={BanterWeb} size="tiny" />
+      </Menu.Item>
         <Menu.Item name='Podcasts' onClick={() => navigateTo('/podcasts/')}/>
         <Menu.Item name='Articles' onClick={() => navigateTo('/posts/')}/>
         <Menu.Menu position='right'>
@@ -34,25 +29,6 @@ const TemplateWrapper = ({ data, children }) => (
           </Menu.Item>
         </Menu.Menu>
       </Menu>
-    {/* <AppBar
-        title={data.site.siteMetadata.title}
-        onTitleClick={() => navigateTo('/')}
-        style={{ backgroundColor: '#000080', position: 'fixed' }}
-        showMenuIconButton={false}
-        children={
-          <div style={{ margin: 'auto' }}>
-            <IconMenu
-              iconButtonElement={<IconButton><MenuIcon color="white"/></IconButton>}
-              anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
-              targetOrigin={{ horizontal: 'left', vertical: 'top' }}
-              style={{ color: 'white' }}
-            >
-              <MenuItem primaryText="Posts" onClick={() => navigateTo('/posts')} />
-              <MenuItem primaryText="Podcasts" onClick={() => navigateTo('/posts')} />
-            </IconMenu>
-          </div>
-        }
-      /> */}
 
     <div
       style={{
@@ -65,7 +41,6 @@ const TemplateWrapper = ({ data, children }) => (
       {children()}
     </div>
   </div>
-  // </MuiThemeProvider>
 )
 
 TemplateWrapper.propTypes = {
