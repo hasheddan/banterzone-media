@@ -1,11 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Link, { navigateTo } from 'gatsby-link'
+import NavBar from '../components/NavBar'
 import 'semantic-ui-css/semantic.min.css'
-import { Input, Menu, Image } from 'semantic-ui-react'
-
-import BanterWeb from '../images/BanterWeb.png'
 
 
 const TemplateWrapper = ({ data, children }) => (
@@ -17,19 +14,7 @@ const TemplateWrapper = ({ data, children }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Menu>
-      <Menu.Item header onClick={() => navigateTo('/')}>
-        <Image src={BanterWeb} size="tiny" />
-      </Menu.Item>
-        <Menu.Item name='Podcasts' onClick={() => navigateTo('/podcasts/')}/>
-        <Menu.Item name='Articles' onClick={() => navigateTo('/posts/')}/>
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
-          </Menu.Item>
-        </Menu.Menu>
-      </Menu>
-
+    <NavBar />
     <div
       style={{
         margin: '0 auto',
