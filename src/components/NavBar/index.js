@@ -25,6 +25,10 @@ const source = _.range(0, 3).reduce((memo) => {
 }, {})
 
 export default class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.data.allMarkdownRemark.edges);
+  }
 
   componentWillMount() {
     this.resetComponent()
@@ -42,13 +46,14 @@ export default class NavBar extends Component {
 
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
       const isMatch = result => re.test(result.title)
-      console.log(e);
-      // const filteredResults = _.reduce(source, (memo, data, name) => {
+      console.log(isMatch);
+      const filteredResults = _.reduce(source, (memo, data, name) => {
+        console.log(data);
       //   const results = _.filter(data.results, isMatch)
       //   if (results.length) memo[name] = { name, results } // eslint-disable-line no-param-reassign
 
       //   return memo
-      // }, {})
+      }, {})
 
       // this.setState({
       //   isLoading: false,
@@ -59,7 +64,6 @@ export default class NavBar extends Component {
 
   render() {
     const { isLoading, value, results } = this.state
-
     return (
       <Menu>
         <Menu.Item header onClick={() => navigateTo('/')}>
@@ -88,24 +92,24 @@ export default class NavBar extends Component {
   }
 }
 
-export const query = graphql`
-  query IndexQuery {
-    allMarkdownRemark {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            category
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
-      }
-    }
-  }
-`;
+// export const searchQuery = graphql`
+//   query SearchQuery {
+//     allMarkdownRemark {
+//       totalCount
+//       edges {
+//         node {
+//           id
+//           frontmatter {
+//             title
+//             date(formatString: "DD MMMM, YYYY")
+//             category
+//           }
+//           fields {
+//             slug
+//           }
+//           excerpt
+//         }
+//       }
+//     }
+//   }
+// `;
