@@ -10,22 +10,52 @@ export default class PostsPage extends Component {
     this.state = {
       isLoading: true,
       posts: this.props.data.allMarkdownRemark.edges,
-      filtered: {},
+      filtered: [],
+      value: "",
     }
   }
 
+  componentWillMount() {
+    this.resetComponent()
+  }
+
+  resetComponent = () => {
+    this.setState({
+      isLoading: false,
+      filtered: [],
+      value: "",
+      count: 0,
+    })
+  }
+
   filterPosts = (e, {value}) => {
-    console.log(value)
+    this.setState({ isLoading: true, value })
+
+    setTimeout(() => {
+      if (this.state.value.length < 1) return this.resetComponent()
+      const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
+      // const isMatch = result => re.test(result.title)
+      const flt = _.filter(this.state.posts, (p) => {
+        return re.test(p.node.frontmatter.title) || re.test(p.node.frontmatter.author) || re.test(p.node.frontmatter.category)
+      })
+
+      this.setState({
+        isLoading: false,
+        filtered: flt,
+        count: flt.length,
+      })
+      console.log(this.state.filtered)
+    }, 300)
   }
 
   render() {
-    const { isLoading, posts } = this.state
+    const { isLoading, posts, filtered, count } = this.state
 
     return(
       <div>
         <Input fluid icon="search" placeholder='Search...' onChange={this.filterPosts}/>
-          <h4>{this.props.data.allMarkdownRemark.totalCount} Posts</h4>
-          {posts.map(({ node }) => (
+          <h4>{count} Posts</h4>
+          {filtered.map(({ node }) => (
               <div key={node.id}>
                   <h3>
                       <Link
@@ -38,6 +68,7 @@ export default class PostsPage extends Component {
                       <span color="#BBB">— {node.frontmatter.date}</span>
                       <Label as="a">{node.frontmatter.category}</Label>
                   </h3>
+                  <h4>{node.frontmatter.author}</h4>
                   <p>{node.excerpt}</p>
                   <br/>
               </div>
@@ -60,6 +91,7 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             category
+            author
           }
           fields {
             slug
