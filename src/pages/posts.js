@@ -10,6 +10,7 @@ export default class PostsPage extends Component {
     this.state = {
       isLoading: true,
       posts: this.props.data.allMarkdownRemark.edges,
+      filtered: {},
     }
   }
 

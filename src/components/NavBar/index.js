@@ -15,6 +15,7 @@ const NavBar = () => (
     <Menu.Item name='Podcasts' onClick={() => navigateTo('/podcasts/')} />
     <Menu.Item name='Articles' onClick={() => navigateTo('/posts/')} />
     <Menu.Menu position='right'>
+      <Menu.Item icon="twitter" href="https://twitter.com/the_banterzone"/>
     </Menu.Menu>
   </Menu>
 )
