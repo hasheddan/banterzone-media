@@ -14,7 +14,7 @@ const TemplateWrapper = ({ data, children }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <NavBar data={data} />
+    <NavBar />
     <div
       style={{
         margin: '0 auto',
@@ -39,23 +39,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            category
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
       }
     }
   }

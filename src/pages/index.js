@@ -1,9 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import FrontCells from '../components/FrontCells'
+
 
 const IndexPage = ({ data }) => (
   <div>
-    <p>Hello and welcome to the banterzone.</p>
+    <FrontCells />
   </div>
 )
 
@@ -11,8 +13,8 @@ export default IndexPage
 
 const backStyle = {
   // backgroundImage: `url("https://www.hdwallback.net/wp-content/uploads/2018/01/Desktop-background-of-coldwallpaperpicsphotosrainhd-pics.jpeg")`,
-  height: '100%',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
+  // height: '100%',
+  // backgroundPosition: 'center',
+  // backgroundRepeat: 'no-repeat',
+  // backgroundSize: 'cover',
 }

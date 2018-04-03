@@ -1,31 +1,52 @@
-import React from 'react'
+import _ from 'lodash'
+import React, { Component } from 'react'
 import Link from "gatsby-link"
-import { Label } from 'semantic-ui-react'
+import { Label, Input } from 'semantic-ui-react'
 
-const PostsPage = ({ data }) => (
-    <div>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-            <div key={node.id}>
-                <h3>
-                    <Link
-                        to={node.fields.slug}
-                        css={{ textDecoration: `none`, color: `inherit` }}
-                    >
-                        {node.frontmatter.title}
-                    </Link>
-                    {" "}
-                    <span color="#BBB">— {node.frontmatter.date}</span>
-                    <Label as="a">{node.frontmatter.category}</Label>
-                </h3>
-                <p>{node.excerpt}</p>
-                <br/>
-            </div>
-        ))}
-    </div>
-)
 
-export default PostsPage
+export default class PostsPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLoading: true,
+      posts: this.props.data.allMarkdownRemark.edges,
+    }
+  }
+
+  filterPosts = (e, {value}) => {
+    console.log(value)
+  }
+
+  render() {
+    const { isLoading, posts } = this.state
+
+    return(
+      <div>
+        <Input fluid icon="search" placeholder='Search...' onChange={this.filterPosts}/>
+          <h4>{this.props.data.allMarkdownRemark.totalCount} Posts</h4>
+          {posts.map(({ node }) => (
+              <div key={node.id}>
+                  <h3>
+                      <Link
+                          to={node.fields.slug}
+                          css={{ textDecoration: `none`, color: `inherit` }}
+                      >
+                          {node.frontmatter.title}
+                      </Link>
+                      {" "}
+                      <span color="#BBB">— {node.frontmatter.date}</span>
+                      <Label as="a">{node.frontmatter.category}</Label>
+                  </h3>
+                  <p>{node.excerpt}</p>
+                  <br/>
+              </div>
+          ))}
+      </div>
+  )
+  }
+}
+
+// export default PostsPage
 
 export const query = graphql`
   query IndexQuery {
