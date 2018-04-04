@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { navigateTo } from 'gatsby-link'
-import { Input, Menu, Image } from 'semantic-ui-react'
+import { Input, Menu, Image, Sticky } from 'semantic-ui-react'
 
 import BanterWeb from '../../images/BanterWeb.png'
 
 
 const NavBar = () => (
   <Menu stackable>
-    <Menu.Item header onClick={() => navigateTo('/')}>
+    <Menu.Item header onClick={() => navigateTo('/')} fitted='vertically'>
       <Image src={BanterWeb}
         style={{ margin: '0 0 0 0', height: '60px' }}
       />

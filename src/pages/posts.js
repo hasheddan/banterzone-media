@@ -84,7 +84,8 @@ export default class PostsPage extends Component {
 
 export const query = graphql`
   query PostsQuery {
-    allMarkdownRemark {
+    allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 10) {
       totalCount
       edges {
         node {

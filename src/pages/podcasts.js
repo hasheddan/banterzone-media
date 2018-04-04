@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image, Label } from 'semantic-ui-react'
 
 import BZPodLogo from '../images/BZPodLogo.png'
 
@@ -19,6 +19,24 @@ const PodcastsPage = () => (
                 <Card.Description>
                     A show about sports and other things. We have many interns.
       </Card.Description>
+      <hr/>
+                <Label as="a" color="blue">
+                    <Icon name='user' />
+                    The Terminal
+                  </Label>
+                <Label as="a" color="blue" >
+                    <Icon name='user' />
+                    Owen Auch
+                  </Label>
+                  <hr/>
+                <Label as="a" color="blue" >
+                    <Icon name='user' />
+                    Eric Grayson
+                  </Label>
+                <Label as="a" color="blue" >
+                    <Icon name='user' />
+                    Chris Detloff
+                  </Label>
             </Card.Content>
             <Card.Content extra>
                 <a href="https://itunes.apple.com/us/podcast/the-banterzone/id1366119571?mt=2">

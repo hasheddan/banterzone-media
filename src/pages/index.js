@@ -19,7 +19,8 @@ export default class IndexPage extends Component {
 
 export const query = graphql`
   query IndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date] }
+    limit: 10) {
       totalCount
       edges {
         node {
