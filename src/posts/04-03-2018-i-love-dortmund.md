@@ -1,8 +1,8 @@
 ---
-title: "First Post Redo"
+title: "I Love Dortmund"
 date: "2018-04-03"
 category: "The Prem"
-author: "The Terminal"
+author: "Chris Detloff"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor imperdiet consequat. Proin id nunc volutpat, congue purus id, fringilla tellus. Suspendisse sagittis lacinia dui, eu tempus elit malesuada sit amet. Suspendisse pellentesque, turpis a rutrum sagittis, mauris dolor vulputate tortor, et suscipit est lectus at mauris. Praesent eu fermentum sem. Phasellus id nisi ut massa sodales suscipit. Pellentesque venenatis lacinia lectus non pharetra.

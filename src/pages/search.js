@@ -4,7 +4,7 @@ import Link from "gatsby-link"
 import { Label, Input, Icon } from 'semantic-ui-react'
 
 
-export default class PostsPage extends Component {
+export default class SearchPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -83,7 +83,7 @@ export default class PostsPage extends Component {
 }
 
 export const query = graphql`
-  query PostsQuery {
+  query SearchQuery {
     allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date] }
       limit: 10) {
       totalCount
