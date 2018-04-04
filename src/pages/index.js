@@ -1,20 +1,41 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import FrontCells from '../components/FrontCells'
 
 
-const IndexPage = ({ data }) => (
-  <div>
-    <FrontCells />
-  </div>
-)
+export default class IndexPage extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-export default IndexPage
-
-const backStyle = {
-  // backgroundImage: `url("https://www.hdwallback.net/wp-content/uploads/2018/01/Desktop-background-of-coldwallpaperpicsphotosrainhd-pics.jpeg")`,
-  // height: '100%',
-  // backgroundPosition: 'center',
-  // backgroundRepeat: 'no-repeat',
-  // backgroundSize: 'cover',
+  render() {
+    return (
+      <div>
+        <FrontCells data={this.props.data}/>
+      </div>
+    )
+  }
 }
+
+export const query = graphql`
+  query IndexQuery {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            category
+            author
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`;

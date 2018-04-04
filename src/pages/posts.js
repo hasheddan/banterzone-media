@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
 import Link from "gatsby-link"
-import { Label, Input } from 'semantic-ui-react'
+import { Label, Input, Icon } from 'semantic-ui-react'
 
 
 export default class PostsPage extends Component {
@@ -53,6 +53,7 @@ export default class PostsPage extends Component {
 
     return(
       <div>
+        <h6>Search by title, author, or sport.</h6>
         <Input fluid icon="search" placeholder='Search...' onChange={this.filterPosts}/>
           <h4>{count} Posts</h4>
           {filtered.map(({ node }) => (
@@ -65,10 +66,13 @@ export default class PostsPage extends Component {
                           {node.frontmatter.title}
                       </Link>
                       {" "}
-                      <span color="#BBB">— {node.frontmatter.date}</span>
-                      <Label as="a">{node.frontmatter.category}</Label>
+                      <span color="#BBB">— {node.frontmatter.date}</span>   
                   </h3>
-                  <h4>{node.frontmatter.author}</h4>
+                  <Label as="a">{node.frontmatter.category}</Label>
+                  <Label as="a" color="blue" >
+                  <Icon name='user' />
+                  {node.frontmatter.author}
+                  </Label>
                   <p>{node.excerpt}</p>
                   <br/>
               </div>
@@ -78,10 +82,8 @@ export default class PostsPage extends Component {
   }
 }
 
-// export default PostsPage
-
 export const query = graphql`
-  query IndexQuery {
+  query PostsQuery {
     allMarkdownRemark {
       totalCount
       edges {
