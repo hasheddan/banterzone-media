@@ -6,7 +6,7 @@ import BanterWeb from '../../images/BanterWeb.png'
 
 
 const NavBar = () => (
-  <Menu>
+  <Menu stackable>
     <Menu.Item header onClick={() => navigateTo('/')}>
       <Image src={BanterWeb}
         style={{ margin: '0 0 0 0', height: '60px' }}
