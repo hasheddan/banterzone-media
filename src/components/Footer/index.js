@@ -1,34 +1,33 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Grid, Image, Item } from 'semantic-ui-react'
+import { Grid, Container, Header, List, Segment, Divider, Image } from 'semantic-ui-react'
+
+import BanterWebWhite from '../../images/BanterWebWhite.png'
+
 
 const Footer = () => (
-  <div>
-    
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id}>
-        <Grid >
-          <Grid.Row>
-            <Grid.Column width={5}>
-              <Image src='https://picsum.photos/200/?random' />
-            </Grid.Column>
-            <Grid.Column width={11}>
-              <h1>{node.frontmatter.title}</h1>
-              <p>{node.excerpt}</p>
-              <p><em>{node.frontmatter.date}</em></p>
-              <Link
-                to={node.fields.slug}
-                css={{ textDecoration: `none`, color: `inherit` }}
-              >
-                Read More
-                      </Link>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </div>
-    ))}
-    
-  </div>
+    <div>
+    <Segment
+    inverted
+    vertical
+    style={{ margin: '5em 0em 0em', padding: '5em 0em' }}
+  >
+    <Container textAlign='center'>
+      {/* More Ideas: https://github.com/Semantic-Org/Semantic-UI-React/blob/master/docs/app/Layouts/FixedMenuLayout.js */}
+      <Image
+        centered
+        size='small'
+        src={BanterWebWhite}
+      />
+      <Divider inverted section />
+      
+      <List horizontal inverted divided link>
+        <List.Item as='a' href='mailto:banterzonemedia@gmail.com'>Contact Us</List.Item>
+        <List.Item>&copy; 2018 - Banterzone Media</List.Item>
+      </List>
+    </Container>
+  </Segment>
+</div>
 )
 
 export default Footer

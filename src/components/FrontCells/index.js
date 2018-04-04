@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Grid, Image, Item } from 'semantic-ui-react'
+import { Grid, Image, Item, Label, Icon } from 'semantic-ui-react'
 
 const FrontCells = ({ data }) => (
   <div>
@@ -14,8 +14,15 @@ const FrontCells = ({ data }) => (
             </Grid.Column>
             <Grid.Column width={11}>
               <h1>{node.frontmatter.title}</h1>
+              <Label as="a">{node.frontmatter.category}</Label>
+                  <Label as="a" color="blue" >
+                  <Icon name='user' />
+                  {node.frontmatter.author}
+                  </Label>
+                <span>{"  "}<em>{node.frontmatter.date}</em></span>
+                <br />
+                <br />
               <p>{node.excerpt}</p>
-              <p><em>{node.frontmatter.date}</em></p>
               <Link
                 to={node.fields.slug}
                 css={{ textDecoration: `none`, color: `inherit` }}
