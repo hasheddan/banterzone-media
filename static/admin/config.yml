@@ -9,7 +9,7 @@ media_folder: static/assets
 collections:
   - name: post
     label: Post
-    folder: posts
+    folder: /src/posts
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
