@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: hasheddan/banterzone-media
+  name: git-gateway
+  repo: master
 
 media_folder: static/assets
 
