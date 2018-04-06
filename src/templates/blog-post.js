@@ -1,5 +1,5 @@
 import React from "react"
-import { Label, Icon } from 'semantic-ui-react'
+import { Label, Icon, Image } from 'semantic-ui-react'
 
 export default ({ data }) => {
   const post = data.markdownRemark;
@@ -12,7 +12,8 @@ export default ({ data }) => {
         {post.frontmatter.author}
       </Label> 
       <br/>
-      <br/> 
+      <br/>
+      <Image src={post.frontmatter.thumbnail} />
       <p><em>{post.frontmatter.date}</em></p>     
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
