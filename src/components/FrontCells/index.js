@@ -10,7 +10,7 @@ const FrontCells = ({ data }) => (
         <Grid >
           <Grid.Row>
             <Grid.Column width={5}>
-              <Image src='https://picsum.photos/200/?random' />
+              <Image src={node.frontmatter.thumbnail} />
             </Grid.Column>
             <Grid.Column width={11}>
               <h1>{node.frontmatter.title}</h1>
