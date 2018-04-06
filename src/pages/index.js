@@ -30,6 +30,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             category
             author
+            thumbnail
           }
           fields {
             slug
