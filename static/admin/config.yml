@@ -18,5 +18,5 @@ collections:
       - {label: "Author", name: "author", widget: "select", options: ["The Terminal", "Owen Auch", "Eric Grayson", "Chris Detloff"]}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Category", name: "category", widget: "select", options: ["NBA", "NFL", "NCAA", "The Prem", "The Banterzone", "Champions League"]}
+      - {label: "Category", name: "category", widget: "select", options: ["NBA", "NFL", "NCAA", "The Prem", "Podcast: The Banterzone", "Champions League"]}
       - {label: "Body", name: "body", widget: "markdown"}
